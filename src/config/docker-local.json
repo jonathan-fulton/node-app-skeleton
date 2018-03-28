@@ -1,0 +1,29 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": "9000",
+
+    "sslEnabled": false,
+    "sslKeyMethod": "file",
+    "sslKeyFile": "config/certs/local/key.pem",
+    "sslCertificateFile": "config/certs/local/server.crt",
+
+    "redirectHttpToHttps": false
+  },
+  "database": {
+    "write": {
+      "host": "db",
+      "database": "mydb",
+      "user": "mydbdev",
+      "password": "=7QM^!4ynHebT7s7",
+      "connectionLimit": 10
+    },
+    "read": {
+      "host": "db",
+      "database": "mydb",
+      "user": "mydbdev",
+      "password": "=7QM^!4ynHebT7s7",
+      "connectionLimit": 10
+    }
+  }
+}

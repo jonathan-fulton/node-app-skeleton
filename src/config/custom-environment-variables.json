@@ -1,0 +1,50 @@
+{
+  "server": {
+    "host": "APP_SERVER_HOST",
+    "port": "APP_SERVER_PORT",
+    "sslEnabled": "APP_SERVER_SSLENABLED",
+    "sslKeyMethod": "APP_SERVER_SSLKEYMETHOD",
+    "sslKey": "APP_SERVER_SSLKEY",
+    "sslCertficate": "APP_SERVER_SSLCERTFICATE",
+    "sslKeyFile": "APP_SERVER_SSLKEYFILE",
+    "sslCertificateFile": "APP_SERVER_SSLCERTIFICATEFILE",
+    "redirectHttpToHttps": "APP_SERVER_REDIRECTHTTPTOHTTPS",
+    "redirectMethod": "APP_SERVER_REDIRECTMETHOD",
+    "redirectPort": "APP_SERVER_REDIRECTPORT",
+    "plugins": {
+      "good": {
+        "enabled": "APP_SERVER_PLUGINS_GOOD_ENABLED"
+      },
+      "poop": {
+        "enabled": "APP_SERVER_PLUGINS_POOP_ENABLED"
+      },
+      "blipp": {
+        "enabled": "APP_SERVER_PLUGINS_BLIPP_ENABLED"
+      },
+      "vision": {
+        "enabled": "APP_SERVER_PLUGINS_VISION_ENABLED"
+      },
+      "inert": {
+        "enabled": "APP_SERVER_PLUGINS_INERT_ENABLED"
+      },
+      "lout": {
+        "enabled": "APP_SERVER_PLUGINS_LOUT_ENABLED"
+      }
+    }
+  },
+  "logger": {
+    "enabled": "APP_LOGGER_ENABLED",
+    "consoleTransport": {
+      "enabled": "APP_LOGGER_CONSOLETRANSPORT_ENABLED",
+      "level": "APP_LOGGER_CONSOLETRANSPORT_LEVEL",
+      "colorize": "APP_LOGGER_CONSOLETRANSPORT_COLORIZE"
+    },
+    "logglyTransport": {
+      "enabled": "APP_LOGGER_LOGGLYTRANSPORT_ENABLED",
+      "level": "APP_LOGGER_LOGGLYTRANSPORT_INFO",
+      "token": "APP_LOGGER_LOGGLYTRANSPORT_TOKEN",
+      "subdomain": "APP_LOGGER_LOGGLYTRANSPORT_SUBDOMAIN",
+      "tags": "APP_LOGGER_LOGGLYTRANSPORT_TAGS"
+    }
+  }
+}

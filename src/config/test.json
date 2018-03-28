@@ -1,0 +1,40 @@
+{
+  "server": {
+    "plugins": {
+      "good": {
+        "enabled": false
+      },
+      "poop": {
+        "enabled": false
+      },
+      "blipp": {
+        "enabled": false
+      },
+      "lout": {
+        "enabled": false
+      }
+    }
+  },
+  "logger": {
+    "enabled": true,
+    "consoleTransport": {
+      "enabled": true,
+      "level": "error",
+      "colorize": true
+    }
+  },
+  "database": {
+    "write": {
+      "host": "127.0.0.1",
+      "database": "mydb_test",
+      "user": "mydbdev",
+      "password": "=7QM^!4ynHebT7s7",
+      "connectionLimit": 1,
+      "multipleStatements": true
+    },
+    "read": null,
+    "testingSourceSchemaLocation": {
+      "database": "mydb"
+    }
+  }
+}

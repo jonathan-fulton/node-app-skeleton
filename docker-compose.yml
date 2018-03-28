@@ -1,0 +1,27 @@
+version: '2.1'
+services:
+  web:
+      image: nodeapp/skeleton:latest # Note, you need to change this
+      mem_limit: 512m
+      command: npm start # Keep this here. May need to change depending on if you use server clustering or not in the image
+      ports:
+        - "9000:9000"
+      depends_on:
+        - db
+      environment:
+        - HOST=docker-local # Used by node-config in config file loading: https://github.com/lorenwest/node-config/wiki/Environment-Variables
+        - NODE_ENV=docker-local
+        - LOGGER_LEVEL=infos
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/config/mysql-conf:/etc/mysql/conf.d
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    healthcheck:
+      test: mysql --host=0.0.0.0 --user=root --password=password -e "SELECT 1"
+      interval: 1s
+      timeout: 1s
+      retries: 20

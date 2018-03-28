@@ -1,0 +1,82 @@
+{
+  "server": {
+    "host": "localhost",
+    "port": "9000",
+
+    "sslEnabled": false,
+    "sslKeyMethod": "file",
+    "sslKey": "-- NO KEY --",
+    "sslCertficate": "-- NO CERTIFICATE --",
+    "sslKeyFile": "config/certs/local/key.pem",
+    "sslCertificateFile": "config/certs/local/server.crt",
+
+    "redirectHttpToHttps": false,
+    "redirectMethod": "redirectServer",
+    "redirectPort": "3001",
+
+    "plugins": {
+      "good": {
+        "enabled": true,
+        "opsInterval": 10000,
+        "events": {
+          "log": "*",
+          "request": "*",
+          "response": "*",
+          "error": "*"
+        }
+      },
+      "poop": {
+        "enabled": false
+      },
+      "blipp": {
+        "enabled": true
+      },
+      "vision": {
+        "enabled": true
+      },
+      "inert": {
+        "enabled": true
+      },
+      "lout": {
+        "enabled": false
+      },
+      "hapiRouter": {
+        "enabled": true,
+        "routes": "src/app/web/modules/**/*Routes.js"
+      }
+    }
+  },
+
+  "logger": {
+    "enabled": true,
+    "consoleTransport": {
+      "enabled": true,
+      "level": "debug",
+      "colorize": true
+    },
+    "logglyTransport": {
+      "enabled": false,
+      "level": "info",
+      "token": "sometoke",
+      "subdomain": "mysubdomain",
+      "tags": ["node-app-skeleton","development"]
+    }
+  },
+
+  "database": {
+    "write": {
+      "host": "localhost",
+      "database": "mydb",
+      "user": "mydbdev",
+      "password": "=7QM^!4ynHebT7s7",
+      "connectionLimit": 10
+    },
+    "read": {
+      "host": "localhost",
+      "database": "mydb",
+      "user": "mydbdev",
+      "password": "=7QM^!4ynHebT7s7",
+      "connectionLimit": 10
+    }
+  }
+}
