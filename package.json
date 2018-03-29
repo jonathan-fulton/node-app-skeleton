@@ -4,9 +4,11 @@
   "description": "Sample node.js app skeleton using Hapi.js",
   "main": "src/app/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/bin/web/startServer.js",
     "start:cluster": "node src/bin/web/startClusteredServers",
+    "test": "docker-compose run -e NODE_ENV=test-docker-local -e NODE_CONFIG_DIR=/app/src/config web /app/node_modules/mocha/bin/mocha /app/src/test/unit --recursive",
+    "test:local": "NODE_ENV=test NODE_CONFIG_DIR='./src/config' node_modules/mocha/bin/mocha ./src/test --recursive",
+    "test:name": "docker-compose run -e NODE_ENV=test-docker-local -e NODE_CONFIG_DIR=/app/src/config web /app/node_modules/mocha/bin/mocha /app/src/test/unit --recursive --grep",
     "docker:build": "docker build -f Dockerfile -t nodeapp/skeleton:latest .",
     "db:up": "./src/bin/migrations/db-migrate.sh up",
     "db:down": "./src/bin/migrations/db-migrate.sh down",
@@ -43,6 +45,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "config-uncached": "^1.0.2",
     "mocha": "^5.0.5"
   }
 }

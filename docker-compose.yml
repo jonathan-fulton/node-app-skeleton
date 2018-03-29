@@ -3,7 +3,7 @@ services:
   web:
       image: nodeapp/skeleton:latest # Note, you need to change this
       mem_limit: 512m
-      command: npm start # Keep this here. May need to change depending on if you use server clustering or not in the image
+      command: npm start # Keep this here. May need to change depending on if you use web clustering or not in the image
       ports:
         - "9000:9000"
       volumes:

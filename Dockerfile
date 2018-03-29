@@ -11,7 +11,7 @@ WORKDIR /app
 COPY package.json package.json
 
 # Install our dependencies
-RUN npm install --loglevel warn --no-progress --production
+RUN npm install --loglevel warn --no-progress # --production
 
 # Copy over all of our code - note for local dev we'll mount over this from docker-compose
 # DO THIS AFTER npm install so we get benefits of caching for npm install which takes a while
@@ -24,7 +24,7 @@ COPY ./src/test src/test
 
 EXPOSE 9000
 
-# Start the web server
+# Start the web web
 CMD npm start
 #CMD while :; do echo 'Hit CTRL+C'; sleep 1; done
 
