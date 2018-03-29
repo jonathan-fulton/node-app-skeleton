@@ -19,12 +19,25 @@ class ServerFactory {
                 if (err) {
                     reject(err);
                 } else {
+
                     resolve(server);
                 }
             });
 
+        }).then(server => {
+            // See https://github.com/hapijs/vision and the examples included
+            server.views({
+                engines: {
+                    ejs: require('ejs')
+                },
+                relativeTo: Path.join(__dirname,'..'),
+                path: 'modules',
+                layout: true,
+                layoutPath: Path.join(__dirname,'../modules/templates')
+            });
+
+            return server;
         })
-        // Register additional plugins
     }
 
 }

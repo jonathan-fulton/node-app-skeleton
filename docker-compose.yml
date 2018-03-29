@@ -6,6 +6,8 @@ services:
       command: npm start # Keep this here. May need to change depending on if you use server clustering or not in the image
       ports:
         - "9000:9000"
+      volumes:
+          - ./src:/app/src
       depends_on:
         - db
       environment:
